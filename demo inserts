@@ -1,0 +1,41 @@
+db.posts.insert({
+  title: 'demo Post One',
+  body: 'Body of demo post one',
+  user: 'itsseanl@gmail.com',
+  coords: {lat: '39.92941570000001', long: '-75.16620069999999'},
+  date: Date()
+})
+
+
+
+(5 miles)
+
+db.posts.insert({
+  title: 'demo Post Two',
+  body: 'Body of demo post two',
+  user: 'itsseanl@gmail.com',
+  coords: {lat: '39.945303', long: '-39.945303'},
+  date: Date()
+})
+
+
+(13.5 miles)
+
+db.posts.insert({
+  title: 'demo Post three',
+  body: 'Body of demo post three',
+  user: 'itsseanl@gmail.com',
+  coords: {lat: '39.934797', long: '-75.028497'},
+  date: Date()
+})
+
+
+(22.5 miles)
+
+db.posts.insert({
+  title: 'demo Post four',
+  body: 'Body of demo post four',
+  user: 'itsseanl@gmail.com',
+  coords: {lat: '40.106021', long: '-74.851204'},
+  date: Date()
+})

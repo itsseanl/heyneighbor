@@ -1,0 +1,28 @@
+{
+	"name": "heyneighbor",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@auth0/auth0-spa-js": "^1.8.1",
+		"@auth0/nextjs-auth0": "^0.12.0",
+		"@material-ui/core": "^4.9.13",
+		"@material-ui/icons": "^4.9.1",
+		"dotenv": "^8.2.0",
+		"isomorphic-unfetch": "^3.0.0",
+		"mongodb": "^3.5.7",
+		"next": "9.3.6",
+		"react": "16.13.1",
+		"react-dom": "16.13.1",
+		"use-auth0-hooks": "^0.7.0"
+	},
+	"devDependencies": {
+		"@types/node": "^13.13.5",
+		"@types/react": "^16.9.35",
+		"typescript": "^3.8.3"
+	}
+}
