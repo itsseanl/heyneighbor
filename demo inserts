@@ -14,7 +14,7 @@ db.posts.insert({
   title: 'demo Post Two',
   body: 'Body of demo post two',
   user: 'itsseanl@gmail.com',
-  coords: {lat: '39.945303', long: '-39.945303'},
+  coords: {lat: '39.945303', long: '-75.116615'},
   date: Date()
 })
 

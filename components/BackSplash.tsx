@@ -4,7 +4,9 @@ const BackSplash = () => {
 	return (
 		<>
 			<div className="backsplash">
-				<video src={"./city.mp4"} autoPlay></video>
+				<video autoPlay>
+					<source src={"./city.mp4"} />
+				</video>
 			</div>
 			<style jsx>{`
 				div {

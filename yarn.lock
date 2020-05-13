@@ -995,6 +995,11 @@
     "@hapi/cryptiles" "4.x.x"
     "@hapi/hoek" "8.x.x"
 
+"@jpowersdev/lat_lng_radius@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@jpowersdev/lat_lng_radius/-/lat_lng_radius-0.1.2.tgz#be3a26ec0929900c860acdeab13c7b4ef45a8fa4"
+  integrity sha512-ZaQTBDXe2w+nQxcFtAsbSdkiXukwWrx516IbhgxxFjBpAmehVl19YvA8H8Y8uZ8LebAZWaBgwrYnZ0ErbU5NBw==
+
 "@material-ui/core@^4.9.13":
   version "4.9.13"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.9.13.tgz#024962bcdda05139e1bad17a1815bf4088702b15"

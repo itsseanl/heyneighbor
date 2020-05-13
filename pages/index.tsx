@@ -8,7 +8,7 @@ export default function Home() {
 	const { user, loading } = useFetchUser();
 	const [theUser, setTheUser] = useState(user);
 	const [userLoading, setUserLoading] = useState(loading);
-	console.log(user);
+	// console.log(user);
 	return (
 		<>
 			<BackSplash />

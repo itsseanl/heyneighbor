@@ -1,7 +1,7 @@
 import react from "react";
 
 const Navigation = ({ user, loading }) => {
-	console.log(user + loading);
+	// console.log(user + loading);
 	return (
 		<>
 			<nav>
