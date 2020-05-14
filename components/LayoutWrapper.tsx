@@ -22,13 +22,16 @@ export default function LayoutWrapper() {
 				font-family: "FrancoisOne";
 				src: url("/fonts/Francois_One/FrancoisOne-Regular.ttf");
 			}
-			h1,
+			h1 {
+				font-family: "Satisfy", sans-serif;
+			}
+			p,
 			h2,
 			h3,
 			h4,
 			h5,
 			h6 {
-				font-family: "Satisfy", sans-serif;
+				font-family: "FrancoisOne";
 			}
 		`}</style>
 	);

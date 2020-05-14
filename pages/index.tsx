@@ -16,6 +16,7 @@ export default function Home() {
 				<div className="logo">
 					<img src="./homey.svg" />
 					<h1>heyNeighbor</h1>
+					<p>a community-driven social network</p>
 				</div>
 				<Navigation user={user} loading={loading} />
 			</div>
@@ -40,6 +41,10 @@ export default function Home() {
 				h1 {
 					font-size: 4em;
 					margin-top: 0;
+					margin-bottom: 0;
+				}
+				p {
+					font-family: "FrancoisOne";
 				}
 			`}</style>
 		</>
