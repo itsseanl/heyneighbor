@@ -43,8 +43,21 @@ export default function getPosts(req, res) {
 			.limit(50)
 			.toArray();
 
-		client.close();
+		let uniqueID = [];
 
-		res.status(200).json({ posts: posts });
+		posts.map((values) => {
+			if (!uniqueID.includes(values._id)) {
+				uniqueID.push(values._id.toString());
+			}
+		});
+		console.log("uniqueIDs: " + uniqueID);
+
+		const coms = await db
+			.collection("comments")
+			.find({ referenceID: { $in: uniqueID } })
+			.toArray();
+
+		console.log("coms (line 63): " + coms + " posts: " + posts);
+		res.status(200).json({ posts: posts, coms: coms });
 	});
 }

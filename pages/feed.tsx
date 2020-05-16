@@ -11,6 +11,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Navigation from "../components/Navigation";
 import CreatePost from "../components/CreatePost";
 import CreateComment from "../components/CreateComment";
+import Comment from "../components/Comment";
 const Feed = () => {
 	const { user, loading } = useFetchUser();
 	const [posts, setPosts] = useState([]);
@@ -80,7 +81,7 @@ const Feed = () => {
 		const resp = await posts.json();
 		//console.log("posts: " + resp.posts);
 		// console.log("coms: " + JSON.stringify(resp));
-		// setComs(resp.coms);
+		setComs(resp.coms);
 		setPosts(resp.posts);
 	}
 
@@ -109,7 +110,7 @@ const Feed = () => {
 	const createComment = async (comment, id) => {
 		// console.log("createcomment: " + comment + " on post: " + id);
 		const data = {
-			username: user.name,
+			username: user.nickname,
 			imgURL: user.picture,
 			comment: comment,
 			id: id,
@@ -152,12 +153,6 @@ const Feed = () => {
 				</div>
 				{posts && coms
 					? posts.map((post) => {
-							// function returnID() {
-							// 	console.log("factory postid: " + post._id);
-							// 	return function () {
-							// 		return post._id;
-							// 	};
-							// }
 							return (
 								<>
 									<div className="post">
@@ -176,16 +171,7 @@ const Feed = () => {
 											</div>
 										</div>
 									</div>
-									{/* {coms.map((com) => {
-										console.log("com: " + com);
-										// const postID = returnID;
-										// console.log("factory postid: " + postID);
-										// console.log("referenceid: " + com.referenceID);
-										// if (com.referenceID == postID) {
-										// 	console.log(com);
-										// 	return <p>{com.comment}</p>;
-										// }
-									})} */}
+									<Comment postID={post._id} coms={coms} />
 									<CreateComment
 										createComment={createComment}
 										postID={post._id}
