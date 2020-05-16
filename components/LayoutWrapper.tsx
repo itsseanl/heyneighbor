@@ -7,13 +7,16 @@ export default function LayoutWrapper() {
 			body {
 				margin: 0;
 				padding: 0;
-				overflow-x: hidden;
+				overflow: hidden;
 				background: #2088c2;
 			}
 			* {
 				box-sizing: border-box;
 			}
-
+			::-webkit-scrollbar {
+				width: 0px;
+				background: transparent; /* make scrollbar transparent */
+			}
 			:global(@font-face) {
 				font-family: "Satisfy";
 				src: url("/fonts/Satisfy/Satisfy-Regular.ttf");

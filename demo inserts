@@ -39,3 +39,17 @@ db.posts.insert({
   coords: {lat: '40.106021', long: '-74.851204'},
   date: Date()
 })
+
+for trenton (~30 miles)
+coordinates
+:
+Array
+0
+:
+40.220570
+1
+:
+-74.759710
+type
+:
+"Point"

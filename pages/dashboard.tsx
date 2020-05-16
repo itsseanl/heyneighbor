@@ -14,7 +14,7 @@ const Dashboard = () => {
 	const isLoading = useState(loading);
 	const isClient = typeof document !== "undefined";
 	const [value, setValue] = useState(0);
-
+	const [isRadiusSet, setIsRadiusSet] = useState(false);
 	async function checkUser(data) {
 		//check if user exists in mongodb
 
@@ -30,6 +30,7 @@ const Dashboard = () => {
 			console.log("returned " + returned.user.radius);
 			if (returned.user.radius) {
 				setValue(returned.user.radius);
+				setIsRadiusSet(true);
 			}
 			if (returned.response == "no location") {
 				getUserLocation();
@@ -79,6 +80,7 @@ const Dashboard = () => {
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
 	};
+
 	const updatedRad = async () => {
 		console.log("onchangecommited");
 		const data = { username: user.name, radius: value };
@@ -93,24 +95,36 @@ const Dashboard = () => {
 		<>
 			<div className="wrapper">
 				<h1>Settings:</h1>
-				<p>Set Radius</p>
-				<Grid container spacing={2}>
-					<Grid item>
-						<HomeIcon />
-					</Grid>
-					<Grid item xs>
-						<Slider
-							value={value}
-							onChange={handleChange}
-							onChangeCommitted={updatedRad}
-							aria-labelledby="continuous-slider"
-						/>
-					</Grid>
-					<Grid item>
-						<Public />
-					</Grid>
-				</Grid>
-				<p>{value} Miles</p>
+				{isRadiusSet ? (
+					<div className="setting">
+						<p>Set Radius</p>
+						<Grid container spacing={2}>
+							<Grid item>
+								<HomeIcon />
+							</Grid>
+							<Grid item xs>
+								<Slider
+									value={value}
+									onChange={handleChange}
+									onChangeCommitted={updatedRad}
+									min={1}
+									max={100}
+									aria-labelledby="continuous-slider"
+								/>
+							</Grid>
+							<Grid item>
+								<Public />
+							</Grid>
+						</Grid>
+						<p>{value} Miles</p>
+					</div>
+				) : (
+					<div className="skeleton-setting">
+						<div className="skeleton-text"></div>
+						<div className="skeleton-section"></div>
+						<div className="skeleton-text"></div>
+					</div>
+				)}
 			</div>
 			<Navigation user={user} loading={loading} />
 			<style jsx>{`
@@ -119,6 +133,24 @@ const Dashboard = () => {
 					padding: 15px;
 					margin: 15px auto;
 					max-width: 900px;
+				}
+				.skeleton-text {
+					width: 300px;
+					height: 25px;
+					background: #ebebeb;
+					margin: 5px;
+				}
+				.skeleton-section {
+					width: 100%;
+					height: 50px;
+					background: #ebebeb;
+					margin: 5px;
+				}
+				.skeleton-setting {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: flex-start;
 				}
 			`}</style>
 		</>

@@ -8,16 +8,16 @@ export default function getPosts(req, res) {
 		assert.ifError(error);
 		const db = client.db("heyneighbor");
 		let data = JSON.parse(req.body);
-		console.log(data);
+		// console.log(data);
 		const username = { username: data.username };
 
 		//check for username sent
 		let userData = await db.collection("users").findOne(username);
 		let lat = userData.lat;
 		let lon = userData.long;
-		console.log("resp " + JSON.stringify(userData));
-		console.log(lat);
-		console.log(lon);
+		// console.log("resp " + JSON.stringify(userData));
+		// console.log(lat);
+		// console.log(lon);
 
 		//return only posts that are within selected radius based on user coordinates
 		const nearSphere = {
@@ -32,6 +32,9 @@ export default function getPosts(req, res) {
 				},
 			},
 		};
+		const comQuery = {
+			referenceID: {},
+		};
 
 		let posts = await db
 			.collection("posts")
@@ -39,8 +42,9 @@ export default function getPosts(req, res) {
 			.sort({ _id: -1 })
 			.limit(50)
 			.toArray();
-		console.log(posts);
+
 		client.close();
-		res.status(200).json({ posts });
+
+		res.status(200).json({ posts: posts });
 	});
 }

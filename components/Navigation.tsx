@@ -38,6 +38,8 @@ const Navigation = ({ user, loading }) => {
 					background: #fff;
 					width: 100%;
 					height: 75px;
+					box-shadow: 1px -4px 10px 2px rgba(0, 0, 0, 0.1);
+					z-index: 101;
 				}
 
 				ul {

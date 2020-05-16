@@ -4,7 +4,7 @@ const BackSplash = () => {
 	return (
 		<>
 			<div className="backsplash">
-				<video autoPlay>
+				<video autoPlay muted>
 					<source src={"./city.mp4"} />
 				</video>
 			</div>
