@@ -223,7 +223,7 @@ const Feed = () => {
 				.posts {
 					display: flex;
 					flex-direction: column;
-					margin: 15px auto;
+					margin: auto;
 					padding: 15px;
 					max-width: 900px;
 					max-height: 80vh;
@@ -235,6 +235,9 @@ const Feed = () => {
 					margin-bottom: 0;
 					width: 100%;
 					box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.1);
+				}
+				.post:last-of-type {
+					margin-bottom: 10vh;
 				}
 				.new-post > :global(svg) {
 					margin: auto;

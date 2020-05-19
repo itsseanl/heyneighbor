@@ -28,6 +28,7 @@ export default function Home() {
 					flex-direction: Column;
 					align-items: center;
 					color: #fffff0;
+					height: 100vh;
 				}
 				.logo {
 					display: flex;

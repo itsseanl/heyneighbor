@@ -51,6 +51,10 @@ const CreateComment = ({ createComment, postID }) => {
 					flex-direction: row;
 					justify-content: space-between;
 					align-items: center;
+					min-height: fit-content;
+				}
+				add-comment:last-of-type {
+					margin-bottom: 100px;
 				}
 			`}</style>
 		</>

@@ -12,6 +12,7 @@ export default async function user(req, res) {
 		let data = JSON.parse(req.body);
 		console.log("data: " + data);
 		const username = { username: data.username };
+		const userandrad = { username: data.username, radius: 5 };
 		let update;
 
 		//if lat/long is sent, create update query
@@ -31,7 +32,7 @@ export default async function user(req, res) {
 			//	console.log(resp);
 			//if no response, user does not exist. Create user
 			if (resp == null) {
-				db.collection("users").insertOne(username, function (err, resp) {
+				db.collection("users").insertOne(userandrad, function (err, resp) {
 					if (err) {
 						res.status(200).json({ response: err });
 					}

@@ -1,6 +1,6 @@
 {
 	"name": "heyNeighbor",
-	"version": 1,
+	"version": 2,
 	"builds": [
 		{
 			"src": "package.json",
@@ -8,13 +8,25 @@
 		}
 	],
 	"env": {
-		"mongo_pw": "@mongo_pw",
-		"uspadmin": "@uspadmin",
+		"domain": "@hnauthdomain",
+		"clientId": "@hnauthclientid",
+		"clientSecret": "@hnauthclientsecret",
+		"redirectUri": "@hnredirecturi",
+		"postLogoutRedirectUri": "@hnlogoutredirecturi",
+		"cookieSecret": "@hncookiesecret",
+		"geolocationAPI": "@hngeolocationapi",
+		"mongoconnect": "@hnmongoconnect"
 	},
 	"build": {
 		"env": {
-			"mongo_pw": "@mongo_pw",
-			"uspadmin": "@uspadmin"
+			"domain": "@hnauthdomain",
+			"clientId": "@hnauthclientid",
+			"clientSecret": "@hnauthclientsecret",
+			"redirectUri": "@hnredirecturi",
+			"postLogoutRedirectUri": "@hnlogoutredirecturi",
+			"cookieSecret": "@hncookiesecret",
+			"geolocationAPI": "@hngeolocationapi",
+			"mongoconnect": "@hnmongoconnect"
 		}
 	}
 }

@@ -30,6 +30,8 @@ const Comment = ({ postID, coms }) => {
 					flex-direction: column;
 					align-items: center;
 					border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+					height: auto;
+					min-height: fit-content;
 				}
 				.body {
 					width: 100%;
